@@ -1,0 +1,24 @@
+﻿@page "/"
+@using AnimeReconServer.Data
+<PageTitle>Index</PageTitle>
+@*<ul>
+    <li>@anime.ID</li>
+    <li>@anime.Rank</li>
+</ul>*@
+<div class="card" style="width:18rem;">
+    <img src="@anime.PictureURL" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@anime.Title</h5>
+        <h6 class="card-subtitle mb-2 text-muted ">English title: @anime.EN_Title</h6>
+        <p>
+            Rank: @anime.Rank<br />
+            Rating: @anime.Mean
+        </p>
+        <p class="card-text">@anime.Synopsis</p>
+    </div>
+</div>
+
+
+@code {
+    API anime = Fetch.FetchData();
+}

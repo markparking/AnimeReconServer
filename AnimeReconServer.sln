@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeReconServer", "AnimeReconServer.csproj", "{9B11D092-93D0-474F-BB7A-CD027DE44F6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimeReconServer", "AnimeReconServer.csproj", "{9B11D092-93D0-474F-BB7A-CD027DE44F6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E5DE4076-F043-4109-AED0-D0421F703A74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

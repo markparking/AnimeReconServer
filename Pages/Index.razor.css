@@ -1,0 +1,15 @@
+dialog {
+    animation: myAnim 1s ease 0s 1 normal forwards;
+    border-radius: calc(0.25rem - 1px);
+    border-color: mediumpurple;
+    font-size: 15px;
+}
+@keyframes myAnim {
+    0% {
+        transform: translateY(-25px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

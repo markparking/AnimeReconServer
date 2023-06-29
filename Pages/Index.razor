@@ -1,34 +1,39 @@
 ﻿@page "/"
 @using AnimeReconServer.Data
+@using static AnimeReconServer.Data.Fetch;
 <head><link /></head>
 <PageTitle>Index</PageTitle>
-
-<div class="card" style="width: 18rem;">
-    <img src="@anime.PictureURL" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">@anime.Title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">English title: @anime.EN_Title</h6>
-        <p>
-            Rank: @anime.Rank<br />
-            Rating: @anime.Mean / 10
-        </p>
-        <p class="card-text">
-            <button type="button" class="btn btn-primary" @onclick="ButtonPress">Info</button>
-        </p>
-    </div>
-    @if (showDialog)
+<div class="parent">
+    @foreach (API item in apiList)
     {
-        <dialog open>
-            <p>@anime.Synopsis</p>
-            <button type="button" class="btn btn-primary" @onclick="ButtonPress">Close</button>
-        </dialog>
+        <div class="card" style="">
+            <img src="@item.main_picture.large" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@item.title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">English title: @item.alternative_titles.en</h6>
+                <p>
+                    Rank: @item.rank <br>
+                    Mean: @item.mean / 10
+                </p>
+                <p class="card-text">
+                    <button type="button" class="btn btn-primary" @onclick="ButtonPress">Info</button>
+                </p>
+            </div>
+            @if (showDialog)
+            {
+                <dialog open>
+                    <p>@item.synopsis</p>
+                    <button type="button" class="btn btn-primary" @onclick="ButtonPress">Close</button>
+                </dialog>
+            }
+        </div>
     }
 </div>
 
 
-
 @code {
-    API anime = Fetch.FetchData();
+    private List<API> apiList = FetchApi.GetItems();
+
     bool showDialog = false;
     
     void ButtonPress()

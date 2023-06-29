@@ -13,3 +13,15 @@ dialog {
         transform: translateY(0);
     }
 }
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 615px);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.card {
+    margin-bottom: 20px !important;
+    width: 18rem;
+}
